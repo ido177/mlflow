@@ -39,7 +39,7 @@ RUN python -m pip install --upgrade pip
 RUN pip install poetry wheel &&  \
     poetry install --no-root --no-dev
 
-FROM python:3.9.16-slim
+FROM --platform=linux/amd64 python:3.9.16 AS build
 
 WORKDIR /mlflow/
 
